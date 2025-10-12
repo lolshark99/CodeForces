@@ -18,8 +18,6 @@ void solve(int t){
         long long start = n - m + 1;     // first alive year
         long long len = m;               // number of years alive
 
-        // ⚠️ If m is too large, we can't build array
-        // Instead, compute number of odds directly:
         long long oddCount;
         if(start % 2 == 0){
             oddCount = len / 2;
@@ -40,3 +38,4 @@ int main(){
     cin >> t;
     solve(t);
 }
+
