@@ -10,7 +10,7 @@ void solve(){
         cout<<0<<endl;
     }
     else{
-        cout<<n<<endl;
+        cout<<x<<endl;
     }
 }
 
