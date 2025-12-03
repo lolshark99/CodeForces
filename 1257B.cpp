@@ -2,19 +2,31 @@
 using namespace std;
 
 void solver(){
-    int x , y;
+    long long x , y;
     cin>>x>>y;
-
-    if(x == y){
+    
+    if(x >= y){ // can decrease serially
         cout<<"YES"<<endl;
+        return;
     }
 
-    else if((x * 1.5 )== y){
-        cout<<"YES"<<endl;
+    else if(x == 2){
+        if(y == 1 || y== 3){
+            cout<<"YES"<<endl;
+            return;
+        }
     }
 
-    else if(abs(x - y) == 1){
+    else if(x == 3){
+        if(y == 2){
+            cout<<"YES"<<endl;
+            return;
+        }
+    }
+
+    else if(x >= 4){
         cout<<"YES"<<endl;
+        return;
     }
 
     else{
