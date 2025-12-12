@@ -14,7 +14,7 @@ void solver(){
     else{
         cout<<1<<endl;
     } */
-   
+   // assuming that b is the default len of tab if n*b < a then no need to move cursor!!
     if(b * m <= a || b >= a){
         cout<<1<<endl;
     }
