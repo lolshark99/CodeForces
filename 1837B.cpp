@@ -7,7 +7,6 @@ void solver(){
     cin>>n;
     cin>>s;
     
-
     int current_len = 0;
     int max_len = 0;
 
