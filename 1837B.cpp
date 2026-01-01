@@ -20,6 +20,7 @@ void solver(){
             current_len = 0;
         }
     }
+    // basically we needd new nums when we have the same operator and len of the longest substring will be the no of the nums needed!! 
     cout<<max_len + 2<<endl; // min cost will be 2 always!!
 }
 
