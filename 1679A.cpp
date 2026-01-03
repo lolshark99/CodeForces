@@ -6,10 +6,11 @@ void solver(){
     
     if(n % 2 != 0 || n < 4){
         cout<<-1<<endl;
+        return;
     }
 
-    double max = n / 4;
-    double min = n / 6;
+    long long  max = n / 4;
+    long long  min = n / 6;
 
     cout<<ceil(min)<<" "<<max<<endl;
 
