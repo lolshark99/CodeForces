@@ -9,11 +9,10 @@ void solver(){
         return;
     }
 
-    long long  max = n / 4;
-    long long  min = (n + 5) / 6;
+    long long  max = n / 4; // max wil be when we use 4 wheeler bus
+    long long  min = (n + 5) / 6; // min will be when we use a 6 wheeler bus
 
     cout<<min<<" "<<max<<endl;
-
 }
 
 int main(){
