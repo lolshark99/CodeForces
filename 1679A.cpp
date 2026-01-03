@@ -10,9 +10,9 @@ void solver(){
     }
 
     long long  max = n / 4;
-    long long  min = n / 6;
+    long long  min = (n + 5) / 6;
 
-    cout<<ceil(min)<<" "<<max<<endl;
+    cout<<min<<" "<<max<<endl;
 
 }
 
