@@ -3,36 +3,34 @@ using namespace std;
 void solver(){
     int n;
     cin>>n;
-    vector<int>numbers(n);
+    vector<int>nums(n);
+    vector<int>even_nums;
+    vector<int>odd_nums;
     for(int i = 0 ; i < n ;i++){
-        cin>>numbers[i];
-    }
-    // if diff between any 2 nos is even then its mod is even also!!
-    for(int j = 0 ; j < n ;j++){
-        int ans1 , ans2;
-        if(numbers[j] %2 == 0){
-            int ans1 = numbers[j];
-            for(int k = 1 ; k < n ;k++){
-                if(numbers[k] % 2 == 0){
-                    int ans2 = numbers[k];
-                }
-            }
-        }
-        else if(numbers[j] %2 != 0){
-            int ans1 = numbers[j];
-            for(int k = 1 ; k < n ;k++){
-                if(numbers[k] %2 != 0){
-                    int ans2 = numbers[k];
-                }
-            }
-            cout<<ans1<<" "<<ans2<<endl;
+        cin>>nums[i];
+        if(nums[i] % 2 == 0){
+            even_nums.push_back(nums[i]);
         }
         else{
-            cout<<-1<<endl;
+            odd_nums.push_back(nums[i]);
         }
     }
+    if(even_nums.size() >= 2){
+        cout<<even_nums[0]<<" "<<even_nums[1]<<endl;
+        return;
+    }
+    else{
+        for(int j = 0 ; j < odd_nums.size() ;j++){
+            for(int k = j + 1 ; k < odd_nums.size() ;k++){
+                if(odd_nums[k] % odd_nums[j] == 0 || (odd_nums[k] % odd_nums[j])% 2 == 0){
+                    cout<<odd_nums[j]<<" "<odd_nums[k]<<endl;
+                    return;
+                }
+            }
+        }
+    }
+    cout<<-1<<endl;
 }
-
 int main(){
     int t;
     cin>>t;
