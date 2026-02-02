@@ -60,7 +60,7 @@ void solver(){
         int add = (4 - nums[j] % 4) % 4;
         best4 = min(best4, add);
     }
-    int best2 = 2;
+    int best2 = max(0, 2 - eve_count);
     cout << min(best4, best2) << endl;
     }
     else{
