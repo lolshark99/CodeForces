@@ -1,45 +1,49 @@
 #include<bits/stdc++.h>
 using namespace std;
 void solver(){
-    int n ;
+    int n;
     cin>>n;
     vector<long long>arr1(n) , arr2(n);
-    for(int i = 0 ; i < n ;i++){
+    unordered_map<long long , long long>mapp1(n) , mapp2(n);
+    for(int i = 0 ; i <n ;i++){
         cin>>arr1[i];
+    }
+    for(int i = 0 ; i <n ;i++){
         cin>>arr2[i];
     }
-    int curr_len_1 = 1;
-    int max_len_1 = 1;
-    //int comp = arr1[0];
+    //int max2 = INT_MIN;
+    //int max1 = INT_MIN;
+    long long cur1 = 1;
+    long long cur2 = 1;
+    mapp1[arr1[0]] = 1;
+    mapp2[arr2[0]] = 1;
     for(int j = 1 ; j < n ; j++){
-        if(arr1[j == arr1[j - 1]]){
-            curr_len_1++;
-            if(curr_len_1 > max_len_1){
-                max_len_1 = curr_len_1;
-            }
+        if(arr1[j] == arr1[j - 1]){
+            cur1++;
         }
         else{
-            curr_len_1 = 1;
+            cur1 = 1;
         }
-    }
-    int max_len_2 = n - max_len_1;
-    int curr_len_2 = 1;
-    int max_len_2 = 1;
-    //int comp = arr1[0];
-    for(int j = 1 ; j < n ; j++){
-        if(arr1[j == arr1[j - 1]]){
-            curr_len_2++;
-            if(curr_len_2 > max_len_2){
-                max_len_2 = curr_len_2;
-            }
+        mapp1[arr1[j]] = max(mapp1[arr1[j]] , cur1);
+        if(arr2[j] == arr2[j - 1]){
+            cur2++;
         }
         else{
-            curr_len_2 = 1;
+            cur2 = 1;
         }
+        mapp2[arr2[j]] = max(mapp2[arr2[j]] , cur2);
     }
-    if()
+    long long ans = 1;
+    for(auto&p : mapp1){
+        int x = p.first;
+        ans = max(ans , mapp1[x] + mapp2[x]);
+    }
+    for(auto&p : mapp2){
+        int x = p.first;
+        ans = max(ans , mapp1[x] + mapp2[x]);
+    }
+    cout<<ans<<endl;
 }
-
 int main(){
     int t;
     cin>>t;
