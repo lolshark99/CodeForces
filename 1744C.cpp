@@ -15,7 +15,7 @@ void solve() {
         return;
     }
     else{
-        string t = s + s;
+        string t = s + s// sequence will repeat
         ll last = -1;
         for(int i = 2*n - 1 ; i >= 0 ; i--){
             if(t[i] == 'g'){
@@ -40,4 +40,5 @@ int main() {
     }
 
     return 0;
+
 }
