@@ -14,7 +14,7 @@ void solve() {
         cout<<0<<endl;
     }
     else{
-        string t = s+s;
+        string t = s+s;// the sequence will repeat
         for(int i = 0 ; i < n ;i++){
             if(s[i] == c){
                 ll dist = 0;
@@ -42,4 +42,5 @@ int main() {
     }
 
     return 0;
+
 }
