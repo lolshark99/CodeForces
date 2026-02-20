@@ -12,23 +12,21 @@ void solve() {
     cin >> s;
     if(c == 'g'){
         cout<<0<<endl;
+        return;
     }
     else{
-        string t = s+s;// the sequence will repeat
-        for(int i = 0 ; i < n ;i++){
-            if(s[i] == c){
-                ll dist = 0;
-                for(int j = i ; j < i + n ; j++){
-                    if(t[j] == 'g'){
-                        dist = j - i;
-                        break;
-                    }
-                }
-                ans = max(ans , dist);
+        string t = s + s;
+        ll last = -1;
+        for(int i = 2*n - 1 ; i >= 0 ; i--){
+            if(t[i] == 'g'){
+                last = i;
+            }
+            if(i < n && t[i] == c){
+                ans  =max(ans , last - i);
             }
         }
-        cout<<ans<<endl;
     }
+    cout<<ans<<endl;
 }
 
 int main() {
@@ -42,5 +40,4 @@ int main() {
     }
 
     return 0;
-
 }
