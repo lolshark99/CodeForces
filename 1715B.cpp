@@ -27,7 +27,7 @@ void solve() {
 		return;
 	}
 	else{
-		// keep pushin atmost k - 1 every time and decrease it untill we get ans
+		// keep pushin atmost k - 1 every time and decrease it untill we are done with rem
 		for(int i = 0 ; i < n && rem > 0 ; i++){
 			ll added = min(rem , k -1);
 			arr[i] += added;
@@ -52,4 +52,5 @@ int main() {
     }
 
     return 0;
+
 }
